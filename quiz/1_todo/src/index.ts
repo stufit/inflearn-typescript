@@ -1,7 +1,7 @@
-let todoItems;
+let todoItems: Array<object>; // Arrat<object> 대신 object[] 로 넣어도 됨.
 
 // api
-function fetchTodoItems() {
+function fetchTodoItems(): Array<object> {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -11,20 +11,21 @@ function fetchTodoItems() {
 }
 
 // crud methods
-function fetchTodos() {
+function fetchTodos(): Array<object> {
   const todos = fetchTodoItems();
   return todos;
 }
 
-function addTodo(todo) {
+// return 값이 없을 때에는 void를 선언해준다.
+function addTodo(todo: object): void {
   todoItems.push(todo);
 }
 
-function deleteTodo(index) {
+function deleteTodo(index: number): void {
   todoItems.splice(index, 1);
 }
 
-function completeTodo(index, todo) {
+function completeTodo(index: number, todo: object): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
