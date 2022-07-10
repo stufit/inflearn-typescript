@@ -14,4 +14,10 @@ function sum2(a:number, b: number): number {
   return a+b;
 }
 
+// 파라미터를 제한하는 특성
+function sum3(a:number, b:number): number {
+  return a+b;
+}
+sum3(10,20,30,40); // 함수에서 a,b만 정의했으므로 그 이상의 인자값이 들어오면 에러가 발생함.
+
 
