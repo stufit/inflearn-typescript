@@ -19,3 +19,11 @@ const capt = {
 }
 getUser(capt);
 
+// 함수의 스펙(구조)에 인터페이스를 활용
+interface SumFunction {
+  (a: number, b:number): number;
+}
+//var sum: SumFunction;
+const sum_v2 = function (a:number, b: number) {
+  return a+b;
+}
