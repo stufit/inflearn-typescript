@@ -47,8 +47,29 @@ var obj_v1: StringRegexDictionary = {
   sth: /abc/,
 }
 // obj_v1['cssFile'] = 'a' // value 값이 RegExp이기 때문에 string 타입은 에러가 발생.
-Object.keys(obj_v1).forEach(function (value) {
+Object.keys(obj_v1).forEach(function (value) {})
 
-})
+// 인터페이스 확장
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Developer_v1 { // 인터페이스 확장 전
+  name: string;
+  age: number;
+  language: string;
+}
+
+interface Developer_v2 extends Person { // 인터페이스 확장 후 : extends를 붙여야함.
+  language: string;
+}
+
+var cap : Developer_v2 = {
+  language: '한국어',
+  name: '관영',
+  age: 32,
+}
+
 
 
