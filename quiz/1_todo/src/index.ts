@@ -1,10 +1,16 @@
+interface Todo {
+  id: number;
+  title: string;
+  done: boolean;
+}
+
 // Array 버전1
 //let todoItems: Array<{ id: number; title: string; done: boolean }>; // Arrat<object> 대신 object[] 로 넣어도 됨.
 
 // Array 버전2
-let todoItems: { id: number; title: string; done: boolean }[];
+let todoItems: Todo[];
 // api
-function fetchTodoItems(): Array<{ id: number; title: string; done: boolean }> {
+function fetchTodoItems(): Array<Todo> {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -20,7 +26,7 @@ function fetchTodos(): Array<object> {
 }
 
 // return 값이 없을 때에는 void를 선언해준다.
-function addTodo(todo: { id: number; title: string; done: boolean }): void {
+function addTodo(todo: Todo): void {
   todoItems.push(todo);
 }
 
@@ -30,7 +36,7 @@ function deleteTodo(index: number): void {
 
 function completeTodo(
   index: number,
-  todo: { id: number; title: string; done: boolean }
+  todo: Todo
 ): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
