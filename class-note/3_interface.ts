@@ -36,3 +36,19 @@ interface StringArray {
 var arr_v1: StringArray = ['a','b','c'];
 // arr_v1[0] = 3 // 배열 안의 값이 스트링으로 선언되어있기 때문에 숫자를 넣으면 에러
 
+// 딕셔너리 패턴
+// 딕셔너리는 키값이 보통 스트링이기 때문에 기본적으로 key는 string타입이며, value의 타입은 []: 으로 정의해주면 된다.
+interface StringRegexDictionary {
+  [key: string]: RegExp; // value 타입을 RegExp로 선언함.
+}
+
+var obj_v1: StringRegexDictionary = {
+  // cssFile: 'ff' // value 값이 RegExp이기 때문에 string 타입은 에러가 발생.
+  sth: /abc/,
+}
+// obj_v1['cssFile'] = 'a' // value 값이 RegExp이기 때문에 string 타입은 에러가 발생.
+Object.keys(obj_v1).forEach(function (value) {
+
+})
+
+
